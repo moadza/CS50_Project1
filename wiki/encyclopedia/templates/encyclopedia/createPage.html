@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    
+<form action="{% url 'savePage' %}" style="display: flex; flex-direction: column;" method="post">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Title" style="width:10%;">
+    <textarea name="content"></textarea>
+    <input type="submit" placeholder="save" style="width:10%;">    
+</form>
+
+{% endblock %}
